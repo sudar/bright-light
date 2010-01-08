@@ -1,0 +1,438 @@
+# Bright Light WordPress Theme
+# Copyright (C) 2009 Sudar
+# This file is distributed under the same license as the Bright Light package.
+# Sudar <sudar@sudarmuthu.com>, 2009.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Bright Light 2.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/bright-light\n"
+"POT-Creation-Date: 2009-08-14 10:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: 404.php:6
+msgid "Oops!!"
+msgstr ""
+
+#: 404.php:8
+msgid ""
+"Apologies, but we were unable to find what you were looking for. Perhaps "
+"searching will help."
+msgstr ""
+
+#: archive.php:8
+#, php-format
+msgid "Daily Archives: <span>%s</span>"
+msgstr ""
+
+#: archive.php:10
+#, php-format
+msgid "Monthly Archives: <span>%s</span>"
+msgstr ""
+
+#: archive.php:12
+#, php-format
+msgid "Yearly Archives: <span>%s</span>"
+msgstr ""
+
+#: archive.php:14
+msgid "Blog Archives"
+msgstr ""
+
+#: archive.php:24 author.php:17 category.php:17 cmspage.php:19 index.php:13
+#: page.php:13 search.php:17 single.php:13 tag.php:17
+#, php-format
+msgid "Permalink to %s"
+msgstr ""
+
+#: archive.php:28 author.php:21 category.php:21 index.php:17 search.php:21
+#: single.php:17 tag.php:21
+msgid "By "
+msgstr ""
+
+#: archive.php:29 author.php:22 category.php:22 index.php:18 search.php:22
+#: single.php:18 tag.php:22
+#, php-format
+msgid "View all posts by %s"
+msgstr ""
+
+#: archive.php:31 author.php:24 category.php:24 index.php:20 search.php:24
+#: single.php:20 tag.php:24
+msgid "Published "
+msgstr ""
+
+#: archive.php:34 author.php:27 category.php:27 index.php:23 search.php:27
+#: single.php:23 tag.php:27
+msgid "In "
+msgstr ""
+
+#: archive.php:36 archive.php:49 author.php:29 author.php:42 category.php:29
+#: category.php:42 cmspage.php:25 functions.php:70 index.php:25 index.php:38
+#: page.php:19 search.php:29 search.php:42 single.php:25 single.php:36
+#: tag.php:29 tag.php:42
+msgid "Edit"
+msgstr ""
+
+#: archive.php:40 author.php:33 category.php:33 index.php:29 search.php:33
+#: tag.php:33
+msgid "Continue reading <span class=\"meta-nav\">&raquo;</span>"
+msgstr ""
+
+#: archive.php:41 author.php:34 category.php:34 cmspage.php:24 index.php:30
+#: page.php:18 search.php:34 single.php:30 tag.php:34
+msgid "Pages:"
+msgstr ""
+
+#: archive.php:45 author.php:38 category.php:38 index.php:34 search.php:38
+#: tag.php:38
+msgid "Posted in "
+msgstr ""
+
+#: archive.php:47 author.php:40 category.php:40 index.php:36 search.php:40
+#: tag.php:40
+msgid "Tagged "
+msgstr ""
+
+#: archive.php:48 author.php:41 category.php:41 index.php:37 search.php:41
+#: tag.php:41
+msgid "Leave a comment"
+msgstr ""
+
+#: archive.php:48 author.php:41 category.php:41 index.php:37 search.php:41
+#: tag.php:41
+msgid "1 Comment"
+msgstr ""
+
+#: archive.php:48 author.php:41 category.php:41 index.php:37 search.php:41
+#: tag.php:41
+msgid "% Comments"
+msgstr ""
+
+#: archive.php:62 author.php:55 category.php:55 index.php:57 search.php:55
+#: tag.php:55
+msgid "<span class=\"meta-nav\">&laquo;</span> Older posts"
+msgstr ""
+
+#: archive.php:63 author.php:56 category.php:56 index.php:58 search.php:56
+#: tag.php:56
+msgid "Newer posts <span class=\"meta-nav\">&raquo;</span>"
+msgstr ""
+
+#: author.php:7
+#, php-format
+msgid "Author Archives: <span class=\"vcard\">%s</span>"
+msgstr ""
+
+#: blogpage.php:22 home.php:16
+msgid " Edit"
+msgstr ""
+
+#: blogpage.php:27 home.php:21
+msgid "Read more &raquo;"
+msgstr ""
+
+#: blogpage.php:51 home.php:45 index.php:50
+msgid "Sorry, no posts matched your criteria."
+msgstr ""
+
+#: blogpage.php:57 home.php:51
+msgid "&laquo; Previous Page"
+msgstr ""
+
+#: blogpage.php:57 home.php:51
+msgid "Next Page &raquo;"
+msgstr ""
+
+#: category.php:7
+msgid "Category Archives:"
+msgstr ""
+
+#: cmspage.php:28 page.php:22 single.php:39
+msgid "Share thy love"
+msgstr ""
+
+#: cmspage.php:30 page.php:24 single.php:41
+msgid "Bookmark in delicious"
+msgstr ""
+
+#: cmspage.php:30 page.php:24 single.php:41
+msgid "Delicious"
+msgstr ""
+
+#: cmspage.php:31 page.php:25 single.php:42
+msgid "Share in Facebook"
+msgstr ""
+
+#: cmspage.php:31 page.php:25 single.php:42
+msgid "Facebook"
+msgstr ""
+
+#: cmspage.php:32 page.php:26 single.php:43
+msgid "Share in Twitter"
+msgstr ""
+
+#: cmspage.php:32 page.php:26 single.php:43
+msgid "Twitter"
+msgstr ""
+
+#: comments.php:7
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+
+#: comments.php:15
+msgid "Comments so far"
+msgstr ""
+
+#: comments.php:21
+msgid "Trackback URI"
+msgstr ""
+
+#: comments.php:29
+#, php-format
+msgid ""
+"<a href=\"%2$s\" title=\"Comments RSS to %1$s\" rel=\"alternate\" type="
+"\"application/rss+xml\">Follow up comments through RSS Feed</a>"
+msgstr ""
+
+#: comments.php:34
+msgid ""
+"<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a "
+"comment</a>"
+msgstr ""
+
+#: comments.php:47
+msgid "Tweetbacks so far"
+msgstr ""
+
+#: comments.php:54
+msgid "Trackbacks/Pingbacks so far"
+msgstr ""
+
+#: comments.php:68
+msgid "You are the first one to start the discussion."
+msgstr ""
+
+#: comments.php:71 comments.php:136
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:77
+msgid "Leave a Comment"
+msgstr ""
+
+#: comments.php:77
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#: comments.php:84
+msgid "You must be "
+msgstr ""
+
+#: comments.php:84
+msgid "logged in"
+msgstr ""
+
+#: comments.php:84
+msgid " to post a comment."
+msgstr ""
+
+#: comments.php:90
+msgid "Logged in as "
+msgstr ""
+
+#: comments.php:90
+msgid "Log out of this account"
+msgstr ""
+
+#: comments.php:90
+msgid "Logout "
+msgstr ""
+
+#: comments.php:95
+msgid "Name"
+msgstr ""
+
+#: comments.php:96
+msgid "(required)"
+msgstr ""
+
+#: comments.php:102
+msgid "Email"
+msgstr ""
+
+#: comments.php:103
+msgid "will not be shown"
+msgstr ""
+
+#: comments.php:104
+msgid ", but required"
+msgstr ""
+
+#: comments.php:110
+msgid "Website"
+msgstr ""
+
+#: comments.php:119
+msgid "You can use these tags: "
+msgstr ""
+
+#: comments.php:126
+msgid "Posting your comment."
+msgstr ""
+
+#: functions.php:15
+msgid "Page "
+msgstr ""
+
+#: functions.php:66
+#, php-format
+msgid "By %1$s on %2$s at %3$s"
+msgstr ""
+
+#: functions.php:71
+msgid ""
+"\\t\\t\\t\\t\\t<span class=\"unapproved\">Your trackback is awaiting "
+"moderation.</span>\\n"
+msgstr ""
+
+#. #-#-#-#-#  bright-light.pot (Bright Light 2.0)  #-#-#-#-#
+#. Theme Name of an extension
+#: functions.php:94
+msgid "Bright Light"
+msgstr ""
+
+#: functions.php:119
+msgid "Bright Light Settings"
+msgstr ""
+
+#: functions.php:128
+msgid "Top Navigation"
+msgstr ""
+
+#: functions.php:132
+msgid "Include these pages in top navigation"
+msgstr ""
+
+#: functions.php:142
+msgid "Select the pages that you want to appear in the top navigation"
+msgstr ""
+
+#: functions.php:147
+msgid "Include home as a tap in top navigation"
+msgstr ""
+
+#: functions.php:149
+msgid "Yes"
+msgstr ""
+
+#: functions.php:150
+msgid "No"
+msgstr ""
+
+#: functions.php:155
+msgid "Sorting order for tabs in in top navigation"
+msgstr ""
+
+#: functions.php:157
+msgid "Sort Pages alphabetically by title"
+msgstr ""
+
+#: functions.php:158
+msgid "Sort Pages by Page Order"
+msgstr ""
+
+#: functions.php:159 functions.php:160
+msgid "Sort by time last modified."
+msgstr ""
+
+#: functions.php:161
+msgid "Sort by numeric Page ID."
+msgstr ""
+
+#: functions.php:162
+msgid "Sort by the Page author's numeric ID."
+msgstr ""
+
+#: functions.php:163
+msgid "Sort alphabetically by Post slug."
+msgstr ""
+
+#: functions.php:170
+msgid "Save Changes"
+msgstr ""
+
+#: header.php:9
+msgid " | Search results for "
+msgstr ""
+
+#: header.php:10
+msgid " | Not Found"
+msgstr ""
+
+#: header.php:23
+#, php-format
+msgid "%s latest posts"
+msgstr ""
+
+#: header.php:24
+#, php-format
+msgid "%s latest comments"
+msgstr ""
+
+#: header.php:43
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:69
+msgid "Search"
+msgstr ""
+
+#: search.php:7
+msgid "Search Results for: "
+msgstr ""
+
+#: search.php:63
+msgid "Nothing Found"
+msgstr ""
+
+#: search.php:65
+msgid ""
+"Sorry, but nothing matched your search criteria. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: single.php:34
+msgid "Tags: "
+msgstr ""
+
+#: tag.php:7
+msgid "Tag Archives:"
+msgstr ""
+
+#. #-#-#-#-#  bright-light.pot (Bright Light 2.0)  #-#-#-#-#
+#. Theme URI of an extension
+#. #-#-#-#-#  bright-light.pot (Bright Light 2.0)  #-#-#-#-#
+#. Author URI of an extension
+msgid "http://sudarmuthu.com/wordpress"
+msgstr ""
+
+#. Description of an extension
+msgid ""
+"Bright Light theme based on Light theme created by <a href=\"http://wpzone."
+"net/free-wordpress-themes/light/\" target=\"_blank\">Stephen Reinhardt</a>."
+msgstr ""
+
+#. Author of an extension
+msgid "Sudar"
+msgstr ""
+
+#. Tags of an extension
+msgid "2 column, threaded comments, fluid, I18n, Localized"
+msgstr ""
