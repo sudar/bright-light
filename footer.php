@@ -11,7 +11,7 @@
 
 <div id="footer">
   <p> Copyright &copy;&nbsp;<?php echo date('Y');?> <?php bloginfo('name'); ?></p>
-  <p>Powered by WordPress and <a href="http://sudarmuthu.com/wordpress" title="Bright Light Theme" target="_blank"><?php _e('Bright Light Theme', 'bright-light');?></a></p>
+  <p>Powered by WordPress and <a href="http://sudarmuthu.com/wordpress/bright-light" title="Bright Light Theme" target="_blank"><?php _e('Bright Light Theme', 'bright-light');?></a></p>
 <?php wp_footer(); ?>
 </div>
 </body>
