@@ -395,4 +395,7 @@ function get_social_icons($permalink, $title) {
     }
 }
 
+if (is_readable(TEMPLATEPATH . '/custom-functions.php')) {
+	include_once(TEMPLATEPATH . '/custom-functions.php');
+}
 ?>
