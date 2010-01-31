@@ -66,7 +66,7 @@ wp_page_menu($home_cond . $included_cond . "sort_column=$sort_order&menu_class=s
 ?>
 
   <div id = "searchbox">
-    <form action="<?php bloginfo('wpurl'); ?>/index.php" method="get" onsubmit="location.href='<?php bloginfo('home'); ?>/search/' + encodeURIComponent(this.s.value).replace(/%20/g, '+'); return false;">
+    <form action="<?php bloginfo('home'); ?>/search/" method="get" onsubmit="location.href='<?php bloginfo('home'); ?>/search/' + encodeURIComponent(this.s.value).replace(/%20/g, '+'); return false;">
         <input type="text" name="s" id="s" size="25" accesskey="s" />
         <input type="submit" value="<?php echo attribute_escape(__('Search', 'bright-light')); ?>" />
     </form>
