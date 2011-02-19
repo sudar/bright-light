@@ -1,6 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
-<head profile="http://gmpg.org/xfn/11">
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+<head> 
 
 <title><?php
     if ( is_single() ) { single_post_title(); }
@@ -11,7 +11,7 @@
     else { bloginfo('name'); wp_title('|'); get_page_number(); }
 ?></title>
 
-<meta http-equiv="content-type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
+<meta charset=<?php bloginfo('charset'); ?>" />
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 
 <?php
@@ -67,7 +67,7 @@ wp_page_menu($home_cond . $included_cond . "sort_column=$sort_order&menu_class=s
 
   <div id = "searchbox">
     <form action="<?php bloginfo('home'); ?>/search/" method="get" onsubmit="location.href='<?php bloginfo('home'); ?>/search/' + encodeURIComponent(this.s.value).replace(/%20/g, '+'); return false;">
-        <input type="text" name="s" id="s" size="25" accesskey="s" />
+        <input type="search" name="s" id="s" size="25" accesskey="s" placeholder="Search" />
         <input type="submit" value="<?php echo attribute_escape(__('Search', 'bright-light')); ?>" />
     </form>
   </div>

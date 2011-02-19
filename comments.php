@@ -87,14 +87,14 @@ if ( post_password_required() ) {
               <p><?php _e('Logged in as ', 'bright-light');?><a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo wp_logout_url();?>&redirect_to=<?php echo $_SERVER['REQUEST_URI']; ?>" title="<?php _e('Log out of this account', 'bright-light') ?>"> <?php _e('Logout ', 'bright-light');?>&raquo; </a> </p>
           <?php else : ?>
               <p>
-                <input class="textbox" type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="30" tabindex="1" />
+                <input class="textbox" type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="30" tabindex="1" <?php if ($req) echo 'required'; ?> />
                 <label for="author">
                         <?php _e('Name', 'bright-light');?>
                         <?php if ($req) _e('(required)', 'bright-light'); ?>
                 </label>
               </p>
               <p>
-                <input class="textbox" type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="30" tabindex="2" />
+                <input class="textbox" type="email" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="30" tabindex="2" <?php if ($req) echo 'required'; ?> />
                 <label for="email">
                         <?php _e('Email', 'bright-light');?>
                         (<?php _e('will not be shown', 'bright-light');?>
@@ -102,7 +102,7 @@ if ( post_password_required() ) {
                 </label>
               </p>
               <p>
-                <input class="textbox" type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="30" tabindex="3" />
+                <input class="textbox" type="url" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="30" tabindex="3" <?php if ($req) echo 'required'; ?> />
                 <label for="url">
                         <?php _e('Website', 'bright-light');?>
                 </label>
