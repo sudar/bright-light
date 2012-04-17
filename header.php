@@ -1,28 +1,61 @@
-<!DOCTYPE html>
+<?php
+/**
+ * The Header for our theme.
+ *
+ * Displays all of the <head> section and everything up till <div id="main">
+ *
+ * @package BrightLight 
+ */
+?><!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" <?php language_attributes(); ?>>
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" <?php language_attributes(); ?>>
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" <?php language_attributes(); ?>>
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
 <html <?php language_attributes(); ?>>
+<!--<![endif]-->
 <head> 
 
+<meta charset="<?php bloginfo( 'charset' ); ?>" />
+<meta name="viewport" content="width=device-width" />
 <title><?php
-    if ( is_single() ) { single_post_title(); }
-    elseif ( is_home() || is_front_page() ) { bloginfo('name'); print ' | '; bloginfo('description'); get_page_number(); }
-    elseif ( is_page() ) { single_post_title(''); }
-    elseif ( is_search() ) { bloginfo('name'); _e(' | Search results for ', 'bright-light');  echo wp_specialchars($s); get_page_number(); }
-    elseif ( is_404() ) { bloginfo('name'); _e(' | Not Found', 'bright-light'); }
-    else { bloginfo('name'); wp_title('|'); get_page_number(); }
-?></title>
+	/*
+	 * Print the <title> tag based on what is being viewed.
+	 */
+	global $page, $paged;
 
-<meta charset=<?php bloginfo('charset'); ?>" />
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
+	wp_title( '|', true, 'right' );
 
+	// Add the blog name.
+	bloginfo( 'name' );
+
+	// Add the blog description for the home/front page.
+	$site_description = get_bloginfo( 'description', 'display' );
+	if ( $site_description && ( is_home() || is_front_page() ) )
+		echo " | $site_description";
+
+	// Add a page number if necessary:
+	if ( $paged >= 2 || $page >= 2 )
+		echo ' | ' . sprintf( __( 'Page %s', 'bright-light' ), max( $paged, $page ) );
+
+	?></title>
+
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <?php
 // For threaded comments
-if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
+    if ( is_singular() && comments_open() && get_option('thread_comments')) wp_enqueue_script( 'comment-reply' );
 
-<?php wp_head(); ?>
+// wp_head hook
+wp_head();
 
-<link rel="alternate" type="application/rss+xml" href="<?php bloginfo('rss2_url'); ?>" title="<?php printf( __( '%s latest posts', 'bright-light' ), wp_specialchars( get_bloginfo('name'), 1 ) ); ?>" />
-<link rel="alternate" type="application/rss+xml" href="<?php bloginfo('comments_rss2_url') ?>" title="<?php printf( __( '%s latest comments', 'bright-light' ), wp_specialchars( get_bloginfo('name'), 1 ) ); ?>" />
-<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -30,9 +63,7 @@ if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 
   <div id="logo">
     <h1 id="blogname">
-        <a href="<?php bloginfo('siteurl'); ?>">
-            <?php  bloginfo('name'); ?>
-        </a>
+        <a href="<?php bloginfo('siteurl'); ?>"><?php bloginfo('name'); ?></a>
     </h1>
 
     <div class="description">
@@ -45,10 +76,10 @@ if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 global $bright_light_options;
 $bright_light_options = get_option('bright-light-options');
 
-$show_home = $bright_light_options['show-home'];
+$show_home      = $bright_light_options['show-home'];
 $included_pages = $bright_light_options['included-pages'];
-$sort_order = $bright_light_options['sort-order'];
-$sort_order = ($sort_order == "")? "menu_order":$sort_order;
+$sort_order     = $bright_light_options['sort-order'];
+$sort_order     = ($sort_order == "")? "menu_order":$sort_order;
 
 if ($show_home == "1") {
     $home_cond = 'show_home=1&';
