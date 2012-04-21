@@ -81,11 +81,11 @@ img.wp-smiley {
     border:none;
     padding:0;
 }
-p img.right {
+p img.right, .alignright {
     float: right;
     margin:10px 0 0 10px;
 }
-p img.left {
+p img.left, .alignright {
     float: left;
     margin:0 10px 10px 0;
 }
