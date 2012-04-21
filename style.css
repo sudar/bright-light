@@ -85,7 +85,7 @@ p img.right, .alignright {
     float: right;
     margin:10px 0 0 10px;
 }
-p img.left, .alignright {
+p img.left, .alignleft {
     float: left;
     margin:0 10px 10px 0;
 }
