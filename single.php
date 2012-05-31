@@ -37,6 +37,13 @@
     <div class="entry-content">
         <?php the_content(); ?>
         <?php wp_link_pages('before=<div class="page-link">' . __( 'Pages:', 'bright-light' ) . '&after=</div>') ?>
+<?php
+    if (function_exists('posts_by_tag')) {
+        echo '<h3>' . __('Related posts', 'bright-light') . '</h3>';
+        posts_by_tag(); 
+    }
+?>
+
     </div><!-- .entry-content -->
 
     <p class="entry-utility">
