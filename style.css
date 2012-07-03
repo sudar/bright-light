@@ -557,6 +557,14 @@ a.retweet:active, a.retweet:hover {
     list-style-image:url(images/arrow.gif);
 }
 
+/* Posts By Tag Plugin */
+#sidebar .posts-by-tag-list {
+    padding-left: 10px;
+}
+#sidebar .posts-by-tag-list li {
+    list-style-image:url(images/arrow.gif);
+}
+
 /*WP Readme file styles*/
 table.mceToolbar td a.mceButton , table.mceToolbar td a.mceButton:visited {
     border:1px solid #F0F0EE;
