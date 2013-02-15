@@ -557,6 +557,16 @@ a.retweet:active, a.retweet:hover {
     list-style-image:url(images/arrow.gif);
 }
 
+/* WP Github commits Plugin*/
+
+.github-commits {
+    padding-left: 10px;
+}
+.github-commits li {
+    list-style-image:url(images/arrow.gif);
+}
+
+
 /* Posts By Tag Plugin */
 #sidebar .posts-by-tag-list {
     padding-left: 10px;
