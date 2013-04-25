@@ -21,10 +21,6 @@ The following are the some of the features of the theme
 
 Current version of the theme is 2.0. 
 
-## HTML5 support
-
-To get HTML5 support, use the html5 git branch.
-
 ## Home page
 
 The theme's homepage can be found at http://sudarmuthu.com/wordpress/bright-light, where you will get latest updates about the theme.
