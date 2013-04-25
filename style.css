@@ -587,3 +587,19 @@ table.mceToolbar td a.mceButton , table.mceToolbar td a.mceButton:visited {
 .wp_syntax .line_numbers{text-align:right;background-color:#def;color:gray;overflow:visible;}
 .wp_syntax pre{margin:0;width:auto;float:none;clear:none;overflow:visible;font-size:12px;line-height:1.333;white-space:pre;}
 
+/* Download styles */
+.download {
+    float:right;
+    width:220px;
+    text-align: center;
+    border: #eed 3px double;
+    padding-top: 25px;
+}
+
+.download img {
+    border: 0;
+}
+
+.download .download-count {
+    color: #45c045;
+}
