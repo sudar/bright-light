@@ -17,13 +17,24 @@ The following are the some of the features of the theme
 *   Easy integration with couple of Plugins
 *   HTML5 features
 
-## Version
-
-Current version of the theme is 2.0. 
-
 ## Home page
 
 The theme's homepage can be found at http://sudarmuthu.com/wordpress/bright-light, where you will get latest updates about the theme.
+
+## Changelog
+
+The current stable version of the theme is 2.1. The development version is 2.2.pre, which will become 2.2
+
+### 2.2.pre (dev version)
+- Removed specific CSS used in my site
+- Cleaned up readme and removed dead links
+
+### 2.1
+- Merged html5 branch into master
+
+### 2.0
+- Started adding html5 features in a separate branch
+- Initial release
 
 ## Copyright and License
 
@@ -31,4 +42,4 @@ Copyright - [Sudar](http://sudarmuthu.com) and is released under GPL
 
 ## Credits
 
-The theme is based on the [light theme](http://wpzone.net/free-wordpress-themes/light/) by Stephen [Reinhardt](http://vaguedream.com/).
+The theme is based on the light theme by [Stephen Reinhardt](http://vaguedream.com/).
