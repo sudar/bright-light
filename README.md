@@ -23,7 +23,11 @@ The theme's homepage can be found at http://sudarmuthu.com/wordpress/bright-ligh
 
 ## Changelog
 
-The current stable version of the theme is 2.1. The development version is 2.2.pre, which will become 2.2
+The current stable version of the theme is 3.0.
+
+### 3.0
+- Fix warnings and deprecated messages
+- Optimize page layout for smartphones
 
 ### 2.2.pre (dev version)
 - Removed specific CSS used in my site
