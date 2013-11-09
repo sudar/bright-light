@@ -3,7 +3,7 @@
 
 <?php if ( is_active_sidebar('secondary_widget_area') ) : ?>
     <div id="siteinfo" class="widget-area">
-        <ul class="xoxo">
+        <ul class="sidebar-container">
             <?php dynamic_sidebar('secondary_widget_area'); ?>
         </ul>
     </div><!-- #secondary .widget-area -->
