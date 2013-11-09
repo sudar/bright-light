@@ -59,7 +59,7 @@ wp_head();
 </head>
 
 <body <?php body_class(); ?>>
-<div id="header">
+<header id="header">
 
   <div id="logo">
     <h1 id="blogname">
@@ -79,7 +79,7 @@ wp_head();
         <input type="submit" value="<?php echo esc_attr( __( 'Search', 'bright-light' ) ); ?>" >
     </form>
   </div>
-</div> <!-- header -->
+</header> <!-- header -->
 
 <?php
 wp_nav_menu( array( 
