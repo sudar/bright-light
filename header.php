@@ -72,29 +72,6 @@ wp_head();
   </div>
 
     <p class="skip-link"><a href="#content" title="<?php _e( 'Skip to content', 'bright-light' ) ?>"><?php _e( 'Skip to content', 'bright-light' ) ?></a></p>
-<?php
-global $bright_light_options;
-$bright_light_options = get_option('bright-light-options');
-
-$show_home      = isset( $bright_light_options['show-home'] ) ? $bright_light_options['show-home'] : '';
-$included_pages = isset( $bright_light_options['included-pages'] ) ? $bright_light_options['included-pages'] : '';
-$sort_order     = isset( $bright_light_options['sort-order'] ) ? $bright_light_options['sort-order'] : '';
-$sort_order     = ($sort_order == "")? "menu_order":$sort_order;
-
-if ($show_home == "1") {
-    $home_cond = 'show_home=1&';
-} else {
-    $home_cond = "";
-}
-
-if (is_array($included_pages)) {
-    $included_cond = 'include=' . implode(",", $included_pages) . '&';
-} else {
-    $included_cond = "";
-}
-
-wp_page_menu($home_cond . $included_cond . "sort_column=$sort_order&menu_class=site-menu&depth=1&link_before=<span>&link_after=</span>");
-?>
 
   <div id = "searchbox">
     <form action="<?php bloginfo( 'url' ); ?>/search/" method="get" onsubmit="location.href='<?php bloginfo( 'url' ); ?>/search/' + encodeURIComponent(this.s.value).replace(/%20/g, '+'); return false;">
@@ -103,4 +80,12 @@ wp_page_menu($home_cond . $included_cond . "sort_column=$sort_order&menu_class=s
     </form>
   </div>
 </div> <!-- header -->
+
+<?php
+wp_nav_menu( array( 
+    'theme_location' => 'primary-menu',
+    'container' => 'nav'
+) );
+?>
+
 <div id="wrap" class ="hfeed">

@@ -137,51 +137,40 @@ h1#blogname a {
 
 /** Navigation **/
 
-/* Top Menus */
-.site-menu ul {
+/* Primary Menu (Top) */
+.menu-primary-menu-container ul {
     clear:both;
     width:80%; height:24px;
     margin:0 auto; padding:0;
 }
-.site-menu li {
+.menu-primary-menu-container li {
     float:left;
     list-style:none;
     margin:0;
 }
-.site-menu a {
-    background:#FFF url(images/active1.gif) left bottom no-repeat;
+.menu-primary-menu-container a {
+    background: #E5E5E5;
     height:27px;
     text-decoration:none;
-    border:none;
     display:block;
     float:left;
+    border:none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     margin-right:2px;
     padding-left:12px;
+    padding-right: 12px;
 }
-.site-menu a:link, .site-menu a:visited {
+.menu-primary-menu-container a:link, .menu-primary-menu-container a:visited {
     color:#787878;
 }
-.site-menu a:hover {
+.menu-primary-menu-container a:hover {
     color:#253C4E;
 }
-
-.site-menu a span {
-    background:url(images/active2.gif) right bottom no-repeat;
-    height:27px;
-    padding-right:12px;
-    border:none;
-    display:block;
-    float:left;
-}
-
-.site-menu .current_page_item a {
-    background:#FFF url(images/current1.gif) left bottom no-repeat;
+.menu-primary-menu-container .current_page_item a {
+    background: #172837;
     color:#AAC8E0;
     padding-left:15px;
-}
-.site-menu .current_page_item a span{
-    background:url(images/current2.gif) right bottom no-repeat;
-    padding-right:15px;
 }
 
 /* Previous next pages */

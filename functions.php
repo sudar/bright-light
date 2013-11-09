@@ -44,11 +44,21 @@ class BrightLight {
      */
     function __construct() {
 
+        $this->register_menus();
         $this->register_sidebars();
 
         // Register hooks
         add_action( 'admin_menu', array(&$this, 'register_settings_page') );
         add_action( 'admin_init', array(&$this, 'add_settings') );
+    }
+
+    /**
+     * Register menus
+     *
+     * @since 3.0
+     */
+    function register_menus() {
+        register_nav_menu( 'primary-menu', __( 'Primary Menu' ) );
     }
 
     /**
