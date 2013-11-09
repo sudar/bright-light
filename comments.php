@@ -18,7 +18,7 @@ if ( post_password_required() ) {
   <p>
 <?php
         if ($post->ping_status == "open") { ?>
-                <a class="trackback-link" rel="trackback" href="<?php trackback_url(display); ?>"><?php _e('Trackback URI', 'bright-light');?></a>
+                <a class="trackback-link" rel="trackback" href="<?php echo get_trackback_url(); ?>"><?php _e('Trackback URI', 'bright-light');?></a>
 <?php   }
 
         if ($post->comment_status == "open") {
@@ -28,7 +28,7 @@ if ( post_password_required() ) {
             
             printf( __( '<a href="%2$s" title="Comments RSS to %1$s" rel="alternate" type="application/rss+xml">Follow up comments through RSS Feed</a>', 'bright-light' ),
             the_title_attribute('echo=0'),
-            comments_rss() );
+            get_post_comments_feed_link() );
 
             echo " | ";
             _e( '<a class="comment-link" href="#respond" title="Post a comment">Post a comment</a>', 'bright-light' );

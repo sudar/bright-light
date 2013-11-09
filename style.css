@@ -6,7 +6,9 @@ Version: 2.2.pre
 Author: Sudar
 Author URI: http://sudarmuthu.com/
 Tags: 2 column, threaded comments, fluid, I18n, Localized
-License: GPL
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: bright-light
 */
 
 /** Default styles **/
@@ -87,9 +89,6 @@ p img.right, .alignright {
 p img.left, .alignleft {
     float: left;
     margin:0 10px 10px 0;
-}
-.utw {
-    text-transform:lowercase;
 }
 .note {
     background-color:#FFFFCC;
@@ -185,7 +184,7 @@ h1#blogname a {
     padding-right:15px;
 }
 
-/** Previous next pages **/
+/* Previous next pages */
 
 .nav-previous {
     float:left;
@@ -193,7 +192,6 @@ h1#blogname a {
 .nav-next {
     float:right;
 }
-
 
 /** Content **/
 #wrap {
@@ -272,6 +270,7 @@ h1#blogname a {
 	background-color:#FFFFCC;
 	padding-left:10px;
 }
+
 /* share Icons */
 
 .share-icons a img {
@@ -341,7 +340,7 @@ h1#blogname a {
     margin:0 20px;
 }
 
-/** Comment */
+/** Comment **/
 
 #commentblock {
     clear:both;
@@ -398,7 +397,7 @@ h1#blogname a {
 #respond .comment-form-author label,
 #respond .comment-form-email label,
 #respond .comment-form-url label,
-#respond .comment-form-twitter label,
+#respond .comment-form-twitter label, /* twitter avatar reloaded Plugin*/
 #respond .comment-form-comment label {
 	background: #eee;
 	-webkit-box-shadow: 1px 2px 2px rgba(204,204,204,0.8);
@@ -477,6 +476,7 @@ h1#blogname a {
 #respond p {
     margin: 10px 0;
 }
+
 /* Ping backs */
 
 ul.pingbacks {
@@ -493,7 +493,6 @@ ul.pingbacks {
     padding:2px 5px;
 }
 #commentblock textarea{
-    /*width: 100%;*/
     height: 20em;
 }
 .comment #respond , .tweetback #respond{

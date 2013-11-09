@@ -63,7 +63,7 @@ wp_head();
 
   <div id="logo">
     <h1 id="blogname">
-        <a href="<?php bloginfo('siteurl'); ?>"><?php bloginfo('name'); ?></a>
+        <a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
     </h1>
 
     <div class="description">
@@ -76,9 +76,9 @@ wp_head();
 global $bright_light_options;
 $bright_light_options = get_option('bright-light-options');
 
-$show_home      = $bright_light_options['show-home'];
-$included_pages = $bright_light_options['included-pages'];
-$sort_order     = $bright_light_options['sort-order'];
+$show_home      = isset( $bright_light_options['show-home'] ) ? $bright_light_options['show-home'] : '';
+$included_pages = isset( $bright_light_options['included-pages'] ) ? $bright_light_options['included-pages'] : '';
+$sort_order     = isset( $bright_light_options['sort-order'] ) ? $bright_light_options['sort-order'] : '';
 $sort_order     = ($sort_order == "")? "menu_order":$sort_order;
 
 if ($show_home == "1") {
@@ -97,9 +97,9 @@ wp_page_menu($home_cond . $included_cond . "sort_column=$sort_order&menu_class=s
 ?>
 
   <div id = "searchbox">
-    <form action="<?php bloginfo('home'); ?>/search/" method="get" onsubmit="location.href='<?php bloginfo('home'); ?>/search/' + encodeURIComponent(this.s.value).replace(/%20/g, '+'); return false;">
-        <input type="search" name="s" id="s" size="25" accesskey="s" placeholder="Search" />
-        <input type="submit" value="<?php echo attribute_escape(__('Search', 'bright-light')); ?>" />
+    <form action="<?php bloginfo( 'url' ); ?>/search/" method="get" onsubmit="location.href='<?php bloginfo( 'url' ); ?>/search/' + encodeURIComponent(this.s.value).replace(/%20/g, '+'); return false;">
+        <input type="search" name="s" id="s" size="25" accesskey="s" placeholder="Search" >
+        <input type="submit" value="<?php echo esc_attr( __( 'Search', 'bright-light' ) ); ?>" >
     </form>
   </div>
 </div> <!-- header -->

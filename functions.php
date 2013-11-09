@@ -16,43 +16,6 @@ function get_page_number() {
     }
 } // end get_page_number
 
-
-// register sidebar
-function theme_widgets_init() {
-    // Area 1
-    register_sidebar( array (
-	'name' => 'Primary Widget Area',
-	'id' => 'primary_widget_area',
-	'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-	'after_widget' => "</li>",
-	'before_title' => '<h4 class="widget-title">',
-	'after_title' => '</h4>',
-    ) );
-
-	// Area 2
-    register_sidebar( array (
-	'name' => 'Secondary Widget Area',
-	'id' => 'secondary_widget_area',
-	'before_widget' => '<li id="%1$s" class="widget-container siteinfo-widget %2$s">',
-	'after_widget' => "</li>",
-	'before_title' => '<h4 class="widget-title">',
-	'after_title' => '</h4>',
-  ) );
-} // end theme_widgets_init
-
-add_action( 'init', 'theme_widgets_init' );
-
-$preset_widgets = array (
-    'primary_widget_area'  => array( 'search', 'pages', 'categories', 'archives' ),
-    'secondary_widget_area'  => array( 'links', 'meta' )
-);
-
-if ( isset( $_GET['activated'] ) ) {
-    update_option( 'sidebars_widgets', $preset_widgets );
-}
-// update_option( 'sidebars_widgets', NULL );  // To make sidebars empty uncomemnt this line
-
-
 /**
  * Custom callback to list pings
  * @param <type> $comment
@@ -71,7 +34,6 @@ function custom_pings($comment, $args, $depth) {
     <?php if ($comment->comment_approved == '0') _e('\t\t\t\t\t<span class="unapproved">Your trackback is awaiting moderation.</span>\n', 'bright-light') ?>
 <?php } // end custom_pings
 
-
 /**
  * Admin class for the theme
  */
@@ -82,16 +44,56 @@ class BrightLight {
      */
     function __construct() {
 
+        $this->register_sidebars();
+
         // Register hooks
         add_action( 'admin_menu', array(&$this, 'register_settings_page') );
         add_action( 'admin_init', array(&$this, 'add_settings') );
     }
 
     /**
+     * Register sidebars
+     *
+     * @since 3.0
+     */
+    function register_sidebars() {
+
+        // Area 1
+        register_sidebar( array (
+            'name' => 'Primary Widget Area',
+            'id' => 'primary_widget_area',
+            'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+            'after_widget' => "</li>",
+            'before_title' => '<h4 class="widget-title">',
+            'after_title' => '</h4>',
+        ) );
+
+        // Area 2
+        register_sidebar( array (
+            'name' => 'Secondary Widget Area',
+            'id' => 'secondary_widget_area',
+            'before_widget' => '<li id="%1$s" class="widget-container siteinfo-widget %2$s">',
+            'after_widget' => "</li>",
+            'before_title' => '<h4 class="widget-title">',
+            'after_title' => '</h4>',
+        ) );
+
+        $preset_widgets = array (
+            'primary_widget_area'  => array( 'search', 'pages', 'categories', 'archives' ),
+            'secondary_widget_area'  => array( 'links', 'meta' )
+        );
+
+        if ( isset( $_GET['activated'] ) ) {
+            update_option( 'sidebars_widgets', $preset_widgets );
+        }
+        // update_option( 'sidebars_widgets', NULL );  // To make sidebars empty uncomemnt this line
+    }
+
+    /**
      * Register the settings page
      */
     function register_settings_page() {
-        add_theme_page( __('Bright Light', 'bright-light'), __('Bright Light', 'bright-light'), 8, 'bright-light', array(&$this, 'settings_page') );
+        add_theme_page( __('Bright Light', 'bright-light'), __('Bright Light', 'bright-light'), 'switch_themes', 'bright-light', array(&$this, 'settings_page') );
     }
 
     /**
@@ -122,14 +124,14 @@ class BrightLight {
                 <?php settings_fields('bright-light'); ?>
                 <?php $options = get_option('bright-light-options'); ?>
 
-                <?php $options['show-home'] = ($options['show-home'] == "")? "1":$options['show-home'];?>
-                <?php $options['sort-order'] = ($options['sort-order'] == "")? "menu_order":$options['sort-order'];?>
+                <?php $options['show-home'] = ( !isset( $options['show-home'] ) || $options['show-home'] == "")? "1":$options['show-home'];?>
+                <?php $options['sort-order'] = ( !isset( $options['sort-order'] ) || $options['sort-order'] == "")? "menu_order":$options['sort-order'];?>
 
-                <?php $options['show-author'] = ($options['show-author'] == "")? "1":$options['show-author'];?>
+                <?php $options['show-author'] = ( !isset( $options['show-author'] ) || $options['show-author'] == "")? "1":$options['show-author'];?>
 
-                <?php $options['enable-icon'] = ($options['enable-icon'] == "")? "1":$options['enable-icon'];?>
-                <?php $options['icon-size'] = ($options['icon-size'] == "")? "64":$options['icon-size'];?>
-                <?php $options['social-icons'] = (!is_array($options['social-icons']))? array('delicious','facebook','linkedin','reddit','stumble','technorati','twitter',) : $options['social-icons'];?>
+                <?php $options['enable-icon'] = ( !isset( $options['enable-icon'] ) || $options['enable-icon'] == "")? "1":$options['enable-icon'];?>
+                <?php $options['icon-size'] = ( !isset( $options['icon-size'] ) || $options['icon-size'] == "")? "64":$options['icon-size'];?>
+                <?php $options['social-icons'] = ( !isset( $options['social-icons'] ) || !is_array($options['social-icons'])) ? array('delicious','facebook','linkedin','reddit','stumble','technorati','twitter',) : $options['social-icons'];?>
 
 <?php
         $social_icons = array(
@@ -156,7 +158,7 @@ class BrightLight {
                             $pages = get_pages("parent=0");
                             foreach ($pages as $page) {
 ?>
-                                <p><label><input type="checkbox" name="bright-light-options[included-pages][]" value="<?php echo $page->ID;?>" <?php checked_array($page->ID, $options['included-pages']); ?> /> <a href = "<?php echo get_permalink($page->ID);?>"><?php echo $page->post_title;?></a></label></p>
+                                <p><label><input type="checkbox" name="bright-light-options[included-pages][]" value="<?php echo $page->ID;?>" <?php checked_array($page->ID, ( isset( $options['included-pages'] ) ? $options['included-pages'] : '' ) ); ?> /> <a href = "<?php echo get_permalink($page->ID);?>"><?php echo $page->post_title;?></a></label></p>
 <?php
                             }
 ?>
@@ -165,7 +167,7 @@ class BrightLight {
                     </tr>
 
                     <tr valign="top">
-                        <th scope="row"><?php _e( 'Include home as a tap in top navigation', 'bright-light' ); ?></th>
+                        <th scope="row"><?php _e( 'Include home as a tab in top navigation', 'bright-light' ); ?></th>
                         <td>
                             <p><label><input type="radio" name="bright-light-options[show-home]" value="1" <?php checked('1', $options['show-home']); ?> /> <?php _e('Yes', 'bright-light');?></label>
                             <label><input type="radio" name="bright-light-options[show-home]" value="0" <?php checked('0', $options['show-home']); ?> /> <?php _e('No', 'bright-light');?></label></p>
@@ -259,11 +261,6 @@ class BrightLight {
         </div>
 <?php
     }
-
-    // PHP4 compatibility
-    function BrightLight() {
-            $this->__construct();
-    }
 }
 
 // Start this plugin once all other plugins are fully loaded
@@ -291,9 +288,9 @@ if (!function_exists('checked_array')) {
 function get_social_icons($permalink, $title) {
     $options = get_option('bright-light-options');
     
-    $options['enable-icon']  = ($options['enable-icon'] == "")? "1":$options['enable-icon'];
-    $options['icon-size']    = ($options['icon-size'] == "")? "64":$options['icon-size'];
-    $options['social-icons'] = (!is_array($options['social-icons']))? array('delicious','facebook','linkedin','reddit','stumble','technorati','twitter',) : $options['social-icons'];
+    $options['enable-icon']  = ( !isset( $options['enable-icon'] ) || $options['enable-icon'] == "")? "1":$options['enable-icon'];
+    $options['icon-size']    = ( !isset( $options['icon-size'] ) || $options['icon-size'] == "")? "64":$options['icon-size'];
+    $options['social-icons'] = ( !isset( $options['social-icons'] ) || !is_array($options['social-icons']))? array('delicious','facebook','linkedin','reddit','stumble','technorati','twitter',) : $options['social-icons'];
 
     $enable_icon  = $options['enable-icon'];
     $icon_size    = $options['icon-size'];
