@@ -31,9 +31,15 @@
 ?>
         <span class="meta-prep meta-prep-entry-date"><?php _e('Published ', 'bright-light'); ?></span>
         <span class="entry-date"><abbr class="published" title="<?php the_time('Y-m-d\TH:i:sO') ?>"><?php the_time( get_option( 'date_format' ) ); ?></abbr></span>
+<?php
+    $categories_list = get_the_category_list( __( ', ', 'bright-light' ) );    
+    if ( '' != $categories_list ) {
+?>
         <span class="meta-sep"> | </span>
-        <span><?php _e('In ', 'bright-light'); echo get_the_category_list(', ');?></span>
-
+        <span><?php _e( 'In ', 'bright-light' ); echo $categories_list; ?></span>
+<?php
+    }
+?>
         <?php edit_post_link( __( 'Edit', 'bright-light' ), "<span class=\"meta-sep\">|</span>\n\t\t\t\t\t\t<span class=\"edit-link\">", "</span>\n\t\t\t\t\t" ) ?>
     </p>
 
@@ -43,8 +49,14 @@
     </div><!-- .entry-content -->
 
     <p class="entry-utility">
+<?php
+    if ( '' != $categories_list ) {
+?>
         <span class="cat-links"><span class="entry-utility-prep entry-utility-prep-cat-links"><?php _e( 'Posted in ', 'bright-light' ); ?></span><?php echo get_the_category_list(', '); ?></span>
         <span class="meta-sep"> | </span>
+<?php
+    }
+?>
         <?php the_tags( '<span class="tag-links"><span class="entry-utility-prep entry-utility-prep-tag-links">' . __('Tagged ', 'bright-light' ) . '</span>', ", ", "</span>\n\t\t\t\t\t\t<span class=\"meta-sep\">|</span>\n" ) ?>
         <span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'bright-light' ), __( '1 Comment', 'bright-light' ), __( '% Comments', 'bright-light' ) ) ?></span>
         <?php edit_post_link( __( 'Edit', 'bright-light' ), "<span class=\"meta-sep\">|</span>\n\t\t\t\t\t\t<span class=\"edit-link\">", "</span>\n\t\t\t\t\t\n" ) ?>
