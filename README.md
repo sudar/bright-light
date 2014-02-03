@@ -23,7 +23,11 @@ The theme's homepage can be found at http://sudarmuthu.com/wordpress/bright-ligh
 
 ## Changelog
 
-The current stable version of the theme is 3.0.
+The current stable version of the theme is 3.0.1
+
+### 3.0.1
+- Tweak: Optimize `meta` tag for mobile
+- Fix: Don't show categories for pages in search results page
 
 ### 3.0
 - Fix warnings and deprecated messages
